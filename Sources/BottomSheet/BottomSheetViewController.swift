@@ -12,7 +12,7 @@ public protocol BottomSheetViewControllerDelegate: NSObjectProtocol {
     func bottomSheetViewControllerWillDisappear(withDuration animationDuration: CGFloat)
 }
 
-public class BottomSheetViewController: UIViewController, BottomSheetViewDelegate, BottomSheetViewDataSource {
+open class BottomSheetViewController: UIViewController, BottomSheetViewDelegate, BottomSheetViewDataSource {
     
     // MARK: - Subviews
     
@@ -76,7 +76,7 @@ public class BottomSheetViewController: UIViewController, BottomSheetViewDelegat
         config()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
