@@ -68,13 +68,7 @@ public class BottomSheetView: UIView {
     
     // MARK: - Properties
     
-    public var minimumHeight: CGFloat = 300 {
-        willSet {
-            currentHeight = newValue
-            contentViewHeightConstraint.constant = newValue
-            contentViewBottomConstraint.constant = newValue
-        }
-    }
+    private var minimumHeight: CGFloat = 300
     private var currentHeight: CGFloat = 300
     private var dismissibleHeight: CGFloat {
         max(minimumHeight*0.4, 200)
@@ -104,6 +98,14 @@ public class BottomSheetView: UIView {
 
     
     // MARK: - Presentation
+    
+    public func setContentMinimumHeight(_ value: CGFloat) {
+        let newValue = min(value, maximumHeight)
+        currentHeight = newValue
+        contentViewHeightConstraint.constant = newValue
+        contentViewBottomConstraint.constant = newValue
+        minimumHeight = newValue
+    }
     
     public func presentBottomSheet() {
         contentViewBottomConstraint?.constant = 0

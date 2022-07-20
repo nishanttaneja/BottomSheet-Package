@@ -59,7 +59,7 @@ open class BottomSheetViewController: UIViewController, BottomSheetViewDelegate,
     open func config() {
         modalTransitionStyle = .coverVertical
         modalPresentationStyle = .overCurrentContext
-        bottomSheetView.minimumHeight = 200
+        bottomSheetView.setContentMinimumHeight(200)
         bottomSheetView.dataSource = self
         bottomSheetView.delegate = self
         bottomSheetView.translatesAutoresizingMaskIntoConstraints = false
