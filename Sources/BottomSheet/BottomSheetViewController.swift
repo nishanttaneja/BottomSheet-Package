@@ -16,7 +16,7 @@ open class BottomSheetViewController: UIViewController, BottomSheetViewDelegate,
     
     // MARK: - Subviews
     
-    private let bottomSheetView: BottomSheetView
+    private let bottomSheetView = BottomSheetView()
 
     
     // MARK: - Delegation
@@ -56,7 +56,10 @@ open class BottomSheetViewController: UIViewController, BottomSheetViewDelegate,
     
     // MARK: - Configuration
     
-    private func config() {
+    public func config() {
+        bottomSheetView.minimumHeight = 200
+        bottomSheetView.dataSource = self
+        bottomSheetView.delegate = self
         bottomSheetView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bottomSheetView)
         NSLayoutConstraint.activate([
@@ -67,16 +70,13 @@ open class BottomSheetViewController: UIViewController, BottomSheetViewDelegate,
         ])
     }
     
-    public init() {
-        bottomSheetView = BottomSheetView()
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nil, bundle: nil)
-        bottomSheetView.minimumHeight = 200
-        bottomSheetView.delegate = self
-        bottomSheetView.dataSource = self
         config()
     }
     
     required public init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        config()
     }
 }
