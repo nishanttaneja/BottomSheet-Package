@@ -20,7 +20,6 @@ public class BottomSheetView: UIView {
     // MARK: - Constants
     
     private let maximumHeight: CGFloat = UIScreen.main.bounds.height - 64
-    private let dismissibleHeight: CGFloat = 200
     private let titleLabelHeight: CGFloat = 44
     private let padding: CGFloat = 16
     private let itemSpacing: CGFloat = 8
@@ -77,6 +76,9 @@ public class BottomSheetView: UIView {
         }
     }
     private var currentHeight: CGFloat = 300
+    private var dismissibleHeight: CGFloat {
+        min(minimumHeight*0.4, 200)
+    }
 
     // Gestures
     private var panGestureRecognizer: UIPanGestureRecognizer! = nil
