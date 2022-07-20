@@ -20,11 +20,10 @@ public class BottomSheetView: UIView {
     // MARK: - Constants
     
     private let maximumHeight: CGFloat = UIScreen.main.bounds.height - 64
-    private let titleLabelHeight: CGFloat = 44
-    private let padding: CGFloat = 16
+    let padding: CGFloat = 16
     private let itemSpacing: CGFloat = 8
     public let animationDuration: CGFloat = 0.4
-    private let contentBarHeight: CGFloat = 32
+    let contentBarHeight: CGFloat = 32
     
     
     // MARK: - Subviews
