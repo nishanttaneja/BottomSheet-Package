@@ -57,6 +57,8 @@ open class BottomSheetViewController: UIViewController, BottomSheetViewDelegate,
     // MARK: - Configuration
     
     public func config() {
+        modalTransitionStyle = .coverVertical
+        modalPresentationStyle = .overCurrentContext
         bottomSheetView.minimumHeight = 200
         bottomSheetView.dataSource = self
         bottomSheetView.delegate = self
