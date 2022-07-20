@@ -21,7 +21,7 @@ open class BottomSheetViewController: UIViewController, BottomSheetViewDelegate,
     
     // MARK: - Delegation
     
-    weak var delegate: BottomSheetViewControllerDelegate? = nil
+    open weak var delegate: BottomSheetViewControllerDelegate? = nil
     
     
     // MARK: - BottomSheetView
@@ -34,7 +34,7 @@ open class BottomSheetViewController: UIViewController, BottomSheetViewDelegate,
     
     // MARK: Delegate
     
-    public func bottomSheetViewDidSelect(view: BottomSheetView) {
+    open func bottomSheetViewDidSelect(view: BottomSheetView) {
         dismiss(animated: true)
     }
     
@@ -56,7 +56,7 @@ open class BottomSheetViewController: UIViewController, BottomSheetViewDelegate,
     
     // MARK: - Configuration
     
-    public func config() {
+    open func config() {
         modalTransitionStyle = .coverVertical
         modalPresentationStyle = .overCurrentContext
         bottomSheetView.minimumHeight = 200
