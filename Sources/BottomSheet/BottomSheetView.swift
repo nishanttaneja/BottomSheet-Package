@@ -77,7 +77,7 @@ public class BottomSheetView: UIView {
     }
     private var currentHeight: CGFloat = 300
     private var dismissibleHeight: CGFloat {
-        min(minimumHeight*0.4, 200)
+        max(minimumHeight*0.4, 200)
     }
 
     // Gestures
