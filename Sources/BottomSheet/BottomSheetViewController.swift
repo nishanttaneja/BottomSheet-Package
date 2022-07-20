@@ -28,7 +28,7 @@ open class BottomSheetViewController: UIViewController, BottomSheetViewDelegate,
     
     // MARK: DataSource
     
-    public func viewToDisplayAsBottomSheetView() -> UIView {
+    open func viewToDisplayAsBottomSheetView() -> UIView {
         .init()
     }
     
