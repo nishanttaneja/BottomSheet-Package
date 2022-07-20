@@ -16,7 +16,7 @@ open class BottomSheetViewController: UIViewController, BottomSheetViewDelegate,
     
     // MARK: - Subviews
     
-    private let bottomSheetView = BottomSheetView()
+    public let bottomSheetView = BottomSheetView()
 
     
     // MARK: - Delegation
